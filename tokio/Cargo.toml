@@ -93,7 +93,7 @@ pin-project-lite = "0.2.11"
 # Everything else is optional...
 bytes = { version = "1.2.1", optional = true }
 # TODO dicej: switch to upstream once WASIp2 support is merged:
-mio = { git = "https://github.com/dicej/mio", branch = "wasip2", optional = true, default-features = false }
+mio = { git = "https://github.com/pimeys/mio", branch = "wasip2", optional = true, default-features = false }
 parking_lot = { version = "0.12.0", optional = true }
 
 [target.'cfg(not(target_family = "wasm"))'.dependencies]
