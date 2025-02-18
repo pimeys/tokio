@@ -1167,15 +1167,14 @@ impl Worker {
             return Ok((Some(task), core));
         }
 
-        if !was_searching {
-            if cx
+        if !was_searching
+            && cx
                 .shared()
                 .idle
                 .transition_worker_to_searching_if_needed(&mut synced.idle, &mut core)
-            {
-                // Skip parking, go back to searching
-                return Ok((None, core));
-            }
+        {
+            // Skip parking, go back to searching
+            return Ok((None, core));
         }
 
         super::counters::inc_num_parks();
